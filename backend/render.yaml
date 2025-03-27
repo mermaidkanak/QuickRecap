@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: quickrecap-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: FRONTEND_URL
+        fromService:
+          name: quickrecap-frontend
+          type: web
+          property: url
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO 

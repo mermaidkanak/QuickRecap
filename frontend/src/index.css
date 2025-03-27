@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-pastel-blue via-white to-pastel-pink min-h-screen font-sans text-gray-800;
+  }
+
+  .dark body {
+    @apply bg-gradient-to-br from-dark-bg to-dark-card text-dark-text;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-pastel-lavender text-gray-700 hover:bg-opacity-80 focus:ring-pastel-lavender;
+  }
+
+  .card {
+    @apply bg-white bg-opacity-70 backdrop-blur-sm rounded-2xl p-6 shadow-soft;
+  }
+  
+  .dark .card {
+    @apply bg-dark-card bg-opacity-80 text-dark-text;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-white bg-opacity-80;
+  }
+  
+  .dark .input-field {
+    @apply bg-dark-card border-dark-card text-dark-text focus:ring-primary-400;
+  }
+}

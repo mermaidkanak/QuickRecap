@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "create-react-app",
+  "devCommand": "npm start",
+  "outputDirectory": "build",
+  "env": {
+    "REACT_APP_API_URL": "https://quickrecap-backend.onrender.com/api"
+  }
+} 
